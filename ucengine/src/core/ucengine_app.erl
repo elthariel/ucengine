@@ -30,7 +30,7 @@ start() ->
     application:start(ucengine).
 
 start(_, _) ->
-    start_apps([sasl, crypto, metrics, gproc, ibrowse]),
+    start_apps([sasl, crypto, metrics, gproc, ibrowse, bcrypt]),
     mnesia:create_schema([node()|nodes()]),
     application:start(mnesia, permanent),
     error_logger:tty(false),
